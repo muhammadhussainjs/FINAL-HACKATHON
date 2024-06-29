@@ -1,14 +1,27 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+const navigate = useNavigate()
+
+
   return (
     <>
-    <ul>
-        <li><Link to='/'>Login</Link></li>
-        <li><Link to='register'>Register</Link></li>
-        <li><Link to='home'>Home</Link></li>
+   <div className="navbar bg-slate-300">
+  <div className="flex-1">
+    <a className="btn btn-ghost text-xl">Home</a>
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+     
+      <li>
+          <ul className="font-semibold text-xl rounded-t-none">
+            <li onClick={()=>{navigate('/login')}}><a>Sign in</a></li>
+          </ul>
+      </li>
     </ul>
+  </div>
+</div>
     </>
   )
 }
