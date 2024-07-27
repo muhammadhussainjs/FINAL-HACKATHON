@@ -36,7 +36,7 @@ if(password !== confirmpassword){
 }
 
   
-  const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/register' , Data)
+  const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/users/register' , Data)
   console.log(response.data);
   if(response.data === 'please enter correct email' ){
       alert('please check it your email and password')

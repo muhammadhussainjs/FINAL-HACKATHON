@@ -26,7 +26,7 @@ const Login = () => {
       }
       console.log(Data);
 
-      const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/login', Data)
+      const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/users/login', Data)
       console.log(response.data);
 
       if (response.data.message === 'User not found!') {
