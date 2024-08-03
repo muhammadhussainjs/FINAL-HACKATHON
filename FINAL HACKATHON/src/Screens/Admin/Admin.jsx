@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import image from '../../assets/smitimage.png'
 import axios from 'axios'
+import smit from '../../assets/smitimage.png'
 
 
 
