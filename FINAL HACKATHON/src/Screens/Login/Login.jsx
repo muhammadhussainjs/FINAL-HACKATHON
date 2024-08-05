@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import image from '../../assets/smitimage.png'
@@ -27,6 +27,9 @@ const Login = () => {
 
       const response = await axios.post('http://localhost:3001/users/login', Data)
       console.log(response.data);
+      const {classLink , token} = response.data
+      localStorage.setItem('classLink' , classLink)
+      localStorage.setItem('token' , token)
 
       if (response.data.message === 'User not found!') {
         alert('Please check your email')
@@ -36,12 +39,12 @@ const Login = () => {
         alert('Please check your password')
         return
       }
-      if (response.data.email === 'hussain@gmail.com') {
+      if (response.data.email === 'ahmed@gmail.com') {
        navigate('/admin')
        return
       }
 
-      navigate('/')
+      navigate('/admin')
     } catch (error) {
       console.error('Error logging in user: ', error);
       alert('Login failed');
@@ -124,6 +127,8 @@ const Login = () => {
           </p>
         </div>
       </div>
+        
+    
     </>
   );
 }

@@ -2,11 +2,17 @@ import React, { useRef } from 'react'
 import image from '../../assets/smitimage.png'
 import axios from 'axios'
 import smit from '../../assets/smitimage.png'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const Admin = () => {
+  const navigate = useNavigate()
 
+ const classLink = localStorage.getItem('classLink')
+  if (!classLink) {
+    navigate('/');
+}
   const titleref = useRef('')
   const descriptionref = useRef('')
 
@@ -101,10 +107,13 @@ console.log('admin data' , response.data);
               </button>
             </div>
           </form>
-
-         
-        </div>
+       </div>
       </div>
+      <div>
+            <h2>Teacher Dashboard</h2>
+            <p>Share this link with your students:</p>
+            <a href={classLink} target="_blank" rel="noopener noreferrer">{classLink}</a>
+        </div>
     </>
   )
 }

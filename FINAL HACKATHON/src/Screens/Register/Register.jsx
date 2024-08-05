@@ -69,103 +69,54 @@ if(password !== confirmpassword){
 
         <div className="mt-3 sm:mx-auto  sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST" >
-            <div className='flex gap-7'>
-
-          <div className='mt-2'>
-              <label htmlFor="name" className="block text-blue-500 text-sm font-medium leading-6 ">
-                NAME
-              </label>
-              
-              <div>
+          <div>
+              <div className="flex items-center gap-36">
+                <label htmlFor="name" className="block  text-sm font-medium leading-6 text-blue-500">
+                  NAME
+                </label>
+                
+              </div>
+              <div className="mt-2">
                 <input
                   id="name"
                   name="name"
                   type="name"
+                  autoComplete="current-password"
                   required
                   ref={nameref}
-                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block outline-none w-[90%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
-          {/* <div>
-              <label htmlFor="name" className="block text-blue-500 py-1 text-sm font-medium leading-6 ">
-                FATHER NAME
-              </label>
-              
-              <div>
-                <input
-                  id="Father Name"
-                  name="name"
-                  type="name"
-                  required
-                  ref={nameref}
-                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  />
-              </div>
-            </div> */}
+            
                   </div>
-                  <div className='flex gap-7'>
-
-            {/* <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-blue-500">
-                CNIC
-              </label>
-              <div className="">
-                <input
-                  id="email"
-                  name="email"
-                  type="name"
-                  autoComplete="email"
-                  required
-                  ref={emailref}
-                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
+                 
+            <div>
+              <div className="flex items-center gap-36">
+                <label htmlFor="email" className="block  text-sm font-medium leading-6 text-blue-500">
+                  EMAIL
+                </label>
+                
               </div>
-            </div> */}
-
-             <div>
-              <label htmlFor="email" className="block text-blue-500 text-sm font-medium leading-6">
-                EMAIL
-              </label>
-              <div className="">
+              <div className="mt-2">
                 <input
                   id="email"
                   name="email"
                   type="email"
-                  autoComplete="email"
+                  autoComplete="current-password"
                   required
                   ref={emailref}
-                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block outline-none w-[90%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div> 
-</div> 
-  {/* <div className="flex gap-7">
-              <div className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                <select className="w-full">
-                  <option value="WEB AND APP">WEB AND APP</option>
-                  <option value="AI AND CHATBOT">AI AND CHATBOT</option>
-                  <option value="GRAPHIC DESIGNING">GRAPHIC DESIGNING</option>
-                </select>
-              </div>
-              <div className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                <select className="w-full">
-                  <option value="SIR KASHIF">SIR KASHIF</option>
-                  <option value="SIR ABDULLAH">SIR ABDULLAH</option>
-                  <option value="SIR GHOUS">SIR GHOUS</option>
-                </select>
-              </div>
-</div>   */}
+            </div>
+
+ 
             <div>
               <div className="flex items-center gap-36">
                 <label htmlFor="password" className="block  text-sm font-medium leading-6 text-blue-500">
                   PASSWORD
                 </label>
-                <div className="text-sm">
-                  <a href="#" className="font-semibold text-blue-500 hover:text-indigo-500">
-                    Forgot password?
-                  </a>
-                </div>
+               
               </div>
               <div className="mt-2">
                 <input
