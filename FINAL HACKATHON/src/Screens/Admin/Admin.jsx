@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import image from '../../assets/smitimage.png'
 import axios from 'axios'
-import smit from '../../assets/smitimage.png'
 import { useNavigate } from 'react-router-dom'
+import smit from '../../assets/smitimage.png'
 
 
 
@@ -10,6 +10,7 @@ const Admin = () => {
   const navigate = useNavigate()
 
  const classLink = localStorage.getItem('classLink')
+ const token = localStorage.getItem('token')
   if (!classLink) {
     navigate('/');
 }
@@ -29,8 +30,10 @@ try {
     description:description
   }
 
- const response = await axios.post('http://localhost:3001/admins/admin' , Data)
-console.log('admin data' , response.data);
+ const response = await axios.post('http://localhost:3001/assignments/assignments' , Data , {
+  headers: { Authorization: `Bearer ${token}` },
+})
+console.log('assignments data' , response.data);
 
 
 } catch (error) {

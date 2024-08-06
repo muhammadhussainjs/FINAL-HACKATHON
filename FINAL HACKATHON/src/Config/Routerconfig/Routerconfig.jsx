@@ -4,7 +4,7 @@ import Login from '../../Screens/Login/Login'
 import Register from '../../Screens/Register/Register'
 import Home from '../../Screens/Home/Home'
 import Admin from '../../Screens/Admin/Admin'
-import Studentsview from '../../Screens/Students/Students'
+import Students from '../../Screens/Students/Students'
 
 
 const Routerconfigs = () => {
@@ -17,7 +17,7 @@ const Routerconfigs = () => {
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>}/>
         <Route path="admin" element={<Admin/>}/>
-        <Route path='students/:uniqueIdentifier' element={<Studentsview/>}/>
+        <Route path='students/:uniqueIdentifier' element={<Students/>}/>
     </Routes>
     </BrowserRouter>
   )
