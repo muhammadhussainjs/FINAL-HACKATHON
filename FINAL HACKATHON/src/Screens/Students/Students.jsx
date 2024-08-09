@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import Card from '../../Components/Card/Card';
 
 const Students = () => {
     const { uniqueIdentifier } = useParams(); // Extract uniqueIdentifier from the URL
@@ -11,7 +12,7 @@ const Students = () => {
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/students/${uniqueIdentifier}`);
+                const response = await axios.get(`http://localhost:3001/assignments/students/${uniqueIdentifier}`);
                 setAssignments(response.data.data);
             } catch (error) {
                 console.error('Error fetching assignments:', error);
@@ -22,28 +23,29 @@ const Students = () => {
         };
 
         fetchAssignments();
-    }, [uniqueIdentifier]);
+    }, []);
 
+    useEffect(()=>{
+        console.log(assignments);
+        
+
+    },[assignments])
     if (loading) {
         return <div>Loading assignments...</div>;
     }
 
     return (
+        <>
         <div>
-            <h2>Assignments</h2>
-            {assignments.length > 0 ? (
-                <ul>
-                    {assignments.map((assignment, index) => (
-                        <li key={index}>
-                            <h4>{assignment.title}</h4>
-                            <p>{assignment.description}</p>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No assignments available at the moment.</p>
-            )}
-        </div>
+            <h2>Assignments</h2> 
+                </div>
+            <div className=' flex flex-col gap-6 items-center'>
+       { assignments.map((item , index)=>{
+           return <Card key={index} title={item.title} description={item.description}/>
+           
+        })}
+        </div> 
+        </>
     );
 };
 
