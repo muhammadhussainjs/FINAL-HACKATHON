@@ -8,42 +8,45 @@ const Register = () => {
   const navigate = useNavigate()
 
   const nameref = useRef(null)
+  const subjectref = useRef(null)
+  const courseref = useRef(null)
+  const roomref = useRef(null)
   const emailref = useRef(null)
-  const passwordref = useRef(null)
-  const confirmpasswordref = useRef(null)
 
   const Getobj = async (e) =>{
     
     e.preventDefault()
 
-    const fullName = nameref.current.value
+    const name = nameref.current.value
+    const subject = subjectref.current.value
+    const course = courseref.current.value
+    const room = roomref.current.value
     const email = emailref.current.value
-    const password = passwordref.current.value
-    const confirmpassword = confirmpasswordref.current.value
-    console.log({fullName , email , password , confirmpassword});
+    console.log({email ,name , subject , course , room});
 
     try{
     const Data = {
-      fullName : fullName,
-      email : email,
-      password : password,
-      // confirmpassword : confirmpassword
+      name : name,
+      subject : subject,
+      course : course,
+      room : room,
+      email : email
     }
     console.log(Data);
-if(password !== confirmpassword){
-  alert('please enter correct password')
-  return
-}
 
   
   const response = await axios.post('http://localhost:3001/users/register' , Data)
   console.log(response.data);
-  if(response.data === 'please enter correct email' ){
-      alert('please check it your email and password')
+  if(response.data === 'please enter all sujession' ){
+      alert('please fill out all of this')
       return
 
   }
-  navigate('/login')
+  navigate('/admin')
+  nameref.current.value = ''
+  subjectref.current.value = ''
+  courseref.current.value = ''
+  roomref.current.value = ''
 
 } catch (error) {
   console.error('Error uploading file or signing up user: ', error);
@@ -80,7 +83,7 @@ if(password !== confirmpassword){
                 <input
                   id="name"
                   name="name"
-                  type="name"
+                  type="text"
                   autoComplete="current-password"
                   required
                   ref={nameref}
@@ -89,10 +92,10 @@ if(password !== confirmpassword){
               </div>
             
                   </div>
-                 
-            <div>
+
+                  <div>
               <div className="flex items-center gap-36">
-                <label htmlFor="email" className="block  text-sm font-medium leading-6 text-blue-500">
+                <label htmlFor="name" className="block  text-sm font-medium leading-6 text-blue-500">
                   EMAIL
                 </label>
                 
@@ -108,24 +111,45 @@ if(password !== confirmpassword){
                   className="block outline-none w-[90%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
+            
+                  </div>
+                 
+            <div>
+              <div className="flex items-center gap-36">
+                <label htmlFor="email" className="block  text-sm font-medium leading-6 text-blue-500">
+                  Subject
+                </label>
+                
+              </div>
+              <div className="mt-2">
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  autoComplete="current-password"
+                  required
+                  ref={subjectref}
+                  className="block outline-none w-[90%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
             </div>
 
  
             <div>
               <div className="flex items-center gap-36">
                 <label htmlFor="password" className="block  text-sm font-medium leading-6 text-blue-500">
-                  PASSWORD
+                  Course
                 </label>
                
               </div>
               <div className="mt-2">
                 <input
-                  id="password"
-                  name="password"
-                  type="password"
+                  id="course"
+                  name="course"
+                  type="text"
                   autoComplete="current-password"
                   required
-                  ref={passwordref}
+                  ref={courseref}
                   className="block outline-none w-[90%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -133,18 +157,18 @@ if(password !== confirmpassword){
              <div>
                <div className="flex items-center justify-between"> 
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-blue-500">
-                  CONFIRM PASSWORD
+                  Room
                 </label>
                 
               </div>
               <div className="mt-2">
                 <input
-                  id="password"
-                  name="password"
-                  type="password"
+                  id="room"
+                  name="room"
+                  type="text"
                   autoComplete="current-password"
                   required
-                  ref={confirmpasswordref}
+                  ref={roomref}
                   className="block w-[90%] outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

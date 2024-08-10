@@ -5,6 +5,7 @@ import Register from '../../Screens/Register/Register'
 import Home from '../../Screens/Home/Home'
 import Admin from '../../Screens/Admin/Admin'
 import Students from '../../Screens/Students/Students'
+import Homes from '../../Screens/Homes/Homes'
 
 
 const Routerconfigs = () => {
@@ -13,7 +14,8 @@ const Routerconfigs = () => {
     <BrowserRouter>
     
     <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="home" element={<Home/>}/>
+        <Route path="/" element={<Homes/>}/>
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>}/>
         <Route path="admin" element={<Admin/>}/>
