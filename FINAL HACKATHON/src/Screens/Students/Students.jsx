@@ -12,7 +12,7 @@ const Students = () => {
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/assignments/students/${uniqueIdentifier}`);
+                const response = await axios.get(`https://backened-with-mongodb-final-hackathon.vercel.app/assignments/students/${uniqueIdentifier}`);
                 setAssignments(response.data.data);
             } catch (error) {
                 console.error('Error fetching assignments:', error);

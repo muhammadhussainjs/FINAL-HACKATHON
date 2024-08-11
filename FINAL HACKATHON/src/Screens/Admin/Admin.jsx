@@ -13,7 +13,7 @@ const Admin = () => {
     async function getEmail() {
       
       try {
-        const response = await axios.get('http://localhost:3001/users/user' , {
+        const response = await axios.get('https://backened-with-mongodb-final-hackathon.vercel.app/users/user' , {
           headers: { Authorization: `Bearer ${token}`}
         });
         console.log('assignments data', response.data);
@@ -28,7 +28,7 @@ const Admin = () => {
     async function fetchAssignments() {
       const token = localStorage.getItem('token');
       try {
-        const response = await axios.get('http://localhost:3001/assignments/assignments', {
+        const response = await axios.get('https://backened-with-mongodb-final-hackathon.vercel.app/assignments/assignments', {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -73,7 +73,7 @@ const Admin = () => {
          description : description
         };
 
-      const response = await axios.post('http://localhost:3001/assignments/assignments', Data, {
+      const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/assignments/assignments', Data, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log('assignments data', response.data);

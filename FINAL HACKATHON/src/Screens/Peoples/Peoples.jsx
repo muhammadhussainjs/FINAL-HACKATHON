@@ -10,7 +10,7 @@ const Peoples = () => {
   useEffect(()=>{
    async function getStudent(){
     try {
-      const response = await axios.get('http://localhost:3001/assignmentsubmit/assignmentsubmit' , {
+      const response = await axios.get('https://backened-with-mongodb-final-hackathon.vercel.app/assignmentsubmit/assignmentsubmit' , {
         headers: { Authorization: `Bearer ${token}` }
       })
       console.log(response.data.data);
