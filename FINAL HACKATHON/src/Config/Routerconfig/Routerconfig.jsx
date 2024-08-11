@@ -6,6 +6,9 @@ import Home from '../../Screens/Home/Home'
 import Admin from '../../Screens/Admin/Admin'
 import Students from '../../Screens/Students/Students'
 import Homes from '../../Screens/Homes/Homes'
+import Student from '../../Screens/Student/Student'
+import StudentSubmit from '../../Screens/StudentSubmit/StudentSubmit'
+import Peoples from '../../Screens/Peoples/Peoples'
 
 
 const Routerconfigs = () => {
@@ -20,6 +23,9 @@ const Routerconfigs = () => {
         <Route path="register" element={<Register/>}/>
         <Route path="admin" element={<Admin/>}/>
         <Route path='students/:uniqueIdentifier' element={<Students/>}/>
+        <Route path='student' element={<Student/>}/>
+        <Route path='studentsubmit' element={<StudentSubmit/>}/>
+        <Route path='people' element={<Peoples/>}/>
     </Routes>
     </BrowserRouter>
   )

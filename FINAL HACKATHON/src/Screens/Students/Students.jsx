@@ -25,6 +25,11 @@ const Students = () => {
         fetchAssignments();
     }, []);
 
+    function gotoNext(item){
+        console.log(item);
+        console.log('item');
+    }
+
     useEffect(()=>{
         console.log(assignments);
         
@@ -41,7 +46,8 @@ const Students = () => {
                 </div>
             <div className=' flex flex-col gap-6 items-center'>
        { assignments.map((item , index)=>{
-           return <Card key={index} title={item.title} description={item.description}/>
+           return <Card key={index} title={item.title} description={item.description}
+           date={item.createdAt} item={item}/>
            
         })}
         </div> 

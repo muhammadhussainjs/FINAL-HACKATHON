@@ -9,8 +9,8 @@ const Register = () => {
 
   const nameref = useRef(null)
   const subjectref = useRef(null)
-  const courseref = useRef(null)
-  const roomref = useRef(null)
+  const batchref = useRef(null)
+  const passwordref = useRef(null)
   const emailref = useRef(null)
 
   const Getobj = async (e) =>{
@@ -19,38 +19,33 @@ const Register = () => {
 
     const name = nameref.current.value
     const subject = subjectref.current.value
-    const course = courseref.current.value
-    const room = roomref.current.value
+    const batch = batchref.current.value
+    const password = passwordref.current.value
     const email = emailref.current.value
-    console.log({email ,name , subject , course , room});
+    console.log({email ,name , subject , batch , password});
 
-    try{
     const Data = {
       name : name,
       subject : subject,
-      course : course,
-      room : room,
+      batch : batch,
+      password: password,
       email : email
     }
     console.log(Data);
-
+    
+    try{
   
   const response = await axios.post('http://localhost:3001/users/register' , Data)
   console.log(response.data);
-  if(response.data === 'please enter all sujession' ){
-      alert('please fill out all of this')
-      return
-
-  }
-  navigate('/admin')
-  nameref.current.value = ''
-  subjectref.current.value = ''
-  courseref.current.value = ''
-  roomref.current.value = ''
-
+  if (response.status === 201) {
+    navigate('/login');
+} else {
+    alert(response.data.message);
+}
 } catch (error) {
-  console.error('Error uploading file or signing up user: ', error);
-  }
+console.error('Error signing up user: ', error);
+alert('An error occurred during registration. Please try again.');
+}
 }
 
 
@@ -95,7 +90,7 @@ const Register = () => {
 
                   <div>
               <div className="flex items-center gap-36">
-                <label htmlFor="name" className="block  text-sm font-medium leading-6 text-blue-500">
+                <label htmlFor="email" className="block  text-sm font-medium leading-6 text-blue-500">
                   EMAIL
                 </label>
                 
@@ -116,7 +111,7 @@ const Register = () => {
                  
             <div>
               <div className="flex items-center gap-36">
-                <label htmlFor="email" className="block  text-sm font-medium leading-6 text-blue-500">
+                <label htmlFor="subject" className="block  text-sm font-medium leading-6 text-blue-500">
                   Subject
                 </label>
                 
@@ -137,19 +132,19 @@ const Register = () => {
  
             <div>
               <div className="flex items-center gap-36">
-                <label htmlFor="password" className="block  text-sm font-medium leading-6 text-blue-500">
-                  Course
+                <label htmlFor="batch" className="block  text-sm font-medium leading-6 text-blue-500">
+                  batch
                 </label>
                
               </div>
               <div className="mt-2">
                 <input
-                  id="course"
-                  name="course"
+                  id="batch"
+                  name="batch"
                   type="text"
                   autoComplete="current-password"
                   required
-                  ref={courseref}
+                  ref={batchref}
                   className="block outline-none w-[90%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -157,18 +152,18 @@ const Register = () => {
              <div>
                <div className="flex items-center justify-between"> 
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-blue-500">
-                  Room
+                  Password
                 </label>
                 
               </div>
               <div className="mt-2">
                 <input
-                  id="room"
-                  name="room"
-                  type="text"
+                  id="password"
+                  name="password"
+                  type="password"
                   autoComplete="current-password"
                   required
-                  ref={roomref}
+                  ref={passwordref}
                   className="block w-[90%] outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

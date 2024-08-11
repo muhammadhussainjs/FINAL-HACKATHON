@@ -39,10 +39,10 @@ const Login = () => {
         alert('Please check your password')
         return
       }
-      if (response.data.email === 'ahmed@gmail.com') {
-       navigate('/admin')
-       return
-      }
+      // if (response.data.email === 'ahmed@gmail.com') {
+      //  navigate('/admin')
+      //  return
+      // }
 
       navigate('/admin')
     } catch (error) {
