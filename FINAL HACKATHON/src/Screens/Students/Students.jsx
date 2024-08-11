@@ -42,9 +42,9 @@ const Students = () => {
     return (
         <>
         <div>
-            <h2>Assignments</h2> 
+            <h2 className=' text-center text-4xl mt-6 text-blue-500'>Assignments</h2> 
                 </div>
-            <div className=' flex flex-col gap-6 items-center'>
+            <div className=' flex flex-col gap-6 items-center mt-12'>
        { assignments.map((item , index)=>{
            return <Card key={index} title={item.title} description={item.description}
            date={item.createdAt} item={item}/>

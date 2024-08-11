@@ -31,6 +31,8 @@ const Admin = () => {
         const response = await axios.get('http://localhost:3001/assignments/assignments', {
           headers: { Authorization: `Bearer ${token}` },
         });
+        
+        
         setAssignment(response.data.data);
       } catch (error) {
         console.log('Error fetching assignments:', error);
@@ -160,8 +162,8 @@ const Admin = () => {
       {assignment.map((item, index) => {
         return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5 mb-10">
         <div className="card-body">
-            <h2 className="card-title">NAME : {item.title}</h2>
-            <h2>SUBJECT : {item.description}</h2>
+            <h2 className="card-title">TITLE : {item.title}</h2>
+            <h2>DESCRIPTION : {item.description}</h2>
             
           </div>
         </div>

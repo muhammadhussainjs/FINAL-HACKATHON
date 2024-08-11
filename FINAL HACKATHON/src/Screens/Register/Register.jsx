@@ -38,6 +38,7 @@ const Register = () => {
   const response = await axios.post('http://localhost:3001/users/register' , Data)
   console.log(response.data);
   if (response.status === 201) {
+    alert('User Registered successfully')
     navigate('/login');
 } else {
     alert(response.data.message);

@@ -48,9 +48,9 @@ try {
       {item ? (
         <div className="card bg-base-300 w-full shadow-xl mt-5">
         <div className="card-body">
-            <h2 className="card-title">CreatedAt : {item.createdAt}</h2>
             <h2 className="card-title">Title : {item.title}</h2>
             <h2>Description : {item.description}</h2>
+            <h2>Posted Date : {item.createdAt}</h2>
             
           </div>
         </div>
