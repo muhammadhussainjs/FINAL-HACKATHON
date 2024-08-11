@@ -23,7 +23,7 @@ const Students = () => {
         };
 
         fetchAssignments();
-    }, []);
+    }, [uniqueIdentifier]);
 
     function gotoNext(item){
         console.log(item);
