@@ -10,7 +10,7 @@ const Peoples = () => {
   useEffect(()=>{
    async function getStudent(){
     try {
-      const response = await axios.get('https://backened-with-mongodb-final-hackathon.vercel.app/assignmentsubmit/assignmentsubmit' , {
+      const response = await axios.get('http://localhost:3001/assignmentsubmit/assignmentsubmit' , {
         headers: { Authorization: `Bearer ${token}` }
       })
       console.log(response.data.data);
@@ -35,7 +35,7 @@ const Peoples = () => {
           <h2 className="card-title">CreatedAt : {item.createdAt}</h2>
           <h2 className="card-title">Title : {item.title}</h2>
           <h2>Description : {item.description}</h2>
-          <p className="text-blue-500"><a href="">Link : {item.link}</a></p>
+          <p className="text-blue-500"><a href={item.link}>Link : {item.link}</a></p>
           
         </div>
       </div>
