@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/admins/');
+        const response = await axios.get('https://backened-with-mongodb-final-hackathon.vercel.app/admins/');
         console.log('admin data', response.data.data);
         setData(response.data.data);
       } catch (error) {

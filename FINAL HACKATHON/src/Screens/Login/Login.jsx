@@ -25,7 +25,7 @@ const Login = () => {
       }
       console.log(Data);
 
-      const response = await axios.post('http://localhost:3001/users/login', Data)
+      const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/users/login', Data)
       console.log(response.data);
       const {classLink , token} = response.data
       localStorage.setItem('classLink' , classLink)

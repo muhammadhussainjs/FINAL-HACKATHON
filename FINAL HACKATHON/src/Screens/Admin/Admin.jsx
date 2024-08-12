@@ -28,7 +28,7 @@ const Admin = () => {
     async function fetchAssignments() {
       const token = localStorage.getItem('token');
       try {
-        const response = await axios.get('http://localhost:3001/assignments/assignments', {
+        const response = await axios.get('https://backened-with-mongodb-final-hackathon.vercel.app/assignments/assignments', {
           headers: { Authorization: `Bearer ${token}` },
         });
         
