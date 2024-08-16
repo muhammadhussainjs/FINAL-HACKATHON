@@ -6,8 +6,8 @@ import Navbar from '../../Components/Navbar1/Navbar1';
 
 const Admin = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState([]); // Initialize with an empty array
-  const [assignment, setAssignment] = useState([]); // Initialize with an empty array
+  const [data, setData] = useState([]); 
+  const [assignment, setAssignment] = useState([]); 
 
   useEffect(() => {
     async function getEmail() {
@@ -87,18 +87,23 @@ const Admin = () => {
 
   return (
     <>
- <Navbar />
+ <Navbar showadmin = {false} />
 
 
       {data.map((item, index) => {
-        return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5">
-        <div className="card-body">
-            <h2 className="card-title">NAME : {item.name}</h2>
-            <h2>SUBJECT : {item.subject}</h2>
-            <h2>BATCH : {item.batch}</h2>
-            <h2>SHARE THIS LINK FOR STUDENTS: {item.classLink}</h2>
+        return <div className='card bg-base-300 w-full shadow-xl mt-5'>
+          
+
+        <div className="card-body items-center">
+        <h2 className=""><strong>NAME :</strong> {item.name}</h2>
+<h2><strong>SUBJECT :</strong> {item.subject}</h2>
+<h2><strong>BATCH :</strong> {item.batch}</h2>
+<h2><strong>SHARE THIS LINK FOR STUDENTS:</strong> <u className=' text-blue-500'>{item.classLink}</u></h2>
+
           </div>
         </div>
+       
+              
       })} 
       
     
@@ -160,12 +165,14 @@ const Admin = () => {
       </div>
 
       {assignment.map((item, index) => {
-        return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5 mb-10">
+        return <div className='justify-center flex flex-col items-center'>
+          <div key={index} className="card bg-base-300 w-[50%] items-center shadow-xl mt-5 mb-10">
         <div className="card-body">
-            <h2 className="card-title">TITLE : {item.title}</h2>
-            <h2>DESCRIPTION : {item.description}</h2>
+            <h2 className="card-title">TITLE : <p className='font-mono'>{item.title}</p></h2>
+            <h2 className='card-title'>DESCRIPTION : <p className='font-light text-2xl  italic'>{item.description}</p></h2>
             
           </div>
+        </div>
         </div>
       })} 
       

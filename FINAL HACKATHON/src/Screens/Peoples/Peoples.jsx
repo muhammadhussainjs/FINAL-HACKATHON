@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Navbar1 from '../../Components/Navbar1/Navbar1'
 
 const Peoples = () => {
   const [data , setData] = useState([])
@@ -29,6 +30,7 @@ const Peoples = () => {
 
   return (
     <>
+    <Navbar1 showstudents = {false} />
     {data.map((item , index)=>{
       return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5">
       <div className="card-body">

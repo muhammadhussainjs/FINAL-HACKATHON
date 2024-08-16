@@ -6,13 +6,15 @@ import Card from '../../Components/Card/Card';
 
 const Students = () => {
     const { uniqueIdentifier } = useParams(); // Extract uniqueIdentifier from the URL
+    console.log('uniqueIdentifier ==> ' , uniqueIdentifier);
+    
     const [assignments, setAssignments] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
-                const response = await axios.get(`https://backened-with-mongodb-final-hackathon.vercel.app/assignments/students/${uniqueIdentifier}`);
+                const response = await axios.get(`https://backened-with-mongodb-final-hackathon.vercel.app/assignments/student/${uniqueIdentifier}`);
 
                 console.log(response.data);
                 
