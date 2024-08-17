@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import Card from '../../Components/Card/Card';
 
 const Students = () => {
-    const { uniqueIdentifier } = useParams(); // Extract uniqueIdentifier from the URL
+    const { uniqueIdentifier } = useParams(); // Extract uniqueIdentifier from from the URL
     console.log('uniqueIdentifier ==> ' , uniqueIdentifier);
     
     const [assignments, setAssignments] = useState([]);
