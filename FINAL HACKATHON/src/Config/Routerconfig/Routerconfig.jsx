@@ -26,6 +26,7 @@ const Routerconfigs = () => {
         <Route path='student' element={<Student/>}/>
         <Route path='studentsubmit' element={<StudentSubmit/>}/>
         <Route path='people' element={<Peoples/>}/>
+        <Route path="*" element={<Home />} /> {/* Fallback route */}
     </Routes>
     </BrowserRouter>
   )
