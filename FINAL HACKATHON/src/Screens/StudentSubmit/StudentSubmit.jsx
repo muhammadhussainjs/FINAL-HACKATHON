@@ -28,7 +28,7 @@ const StudentSubmit = () => {
 try {
     const response =  await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/assignmentsubmit/assignmentsubmits' , Data)
  console.log(response);
- alert('assignment submitted successfully')
+ alert('Assignment Submitted Successfully')
  urlRef.current.value = ''
     
     
@@ -46,7 +46,7 @@ try {
     <div>
      
       {item ? (
-        <div className="card bg-base-300 w-full shadow-xl mt-5">
+        <div className="card bg-base-300 sm:w-96 w-80  shadow-xl mt-5">
         <div className="card-body">
             <h2 className="card-title">Title : {item.title}</h2>
             <h2>Description : {item.description}</h2>

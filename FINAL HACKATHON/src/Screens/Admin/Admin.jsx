@@ -77,7 +77,7 @@ const Admin = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log('assignments data', response.data);
-      alert('assignment post successfully')
+      alert('Assignment Post Successfully')
       titleref.current.value = ''
       descriptionref.current.value = ''
     } catch (error) {

@@ -21,7 +21,7 @@ const Homes = () => {
     <Navbar1 showadmin = {false} showstudents = {false} />
    
 <div className='flex justify-center mt-28'>
-    <div className="card card-compact bg-base-100 w-96 shadow-xl items-center">
+    <div className="card card-compact bg-base-100 w-80 sm:w-96 shadow-xl items-center">
   <figure>
     <img
       src={smit}
