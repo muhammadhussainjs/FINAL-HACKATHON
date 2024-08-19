@@ -22,7 +22,7 @@ const Routerconfigs = () => {
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>}/>
         <Route path="admin" element={<Admin/>}/>
-        <Route path='/students/:uniqueIdentifier' element={<Students/>}/>
+        <Route path='students/:uniqueIdentifier' element={<Students/>}/>
         <Route path='student' element={<Student/>}/>
         <Route path='studentsubmit' element={<StudentSubmit/>}/>
         <Route path='people' element={<Peoples/>}/>

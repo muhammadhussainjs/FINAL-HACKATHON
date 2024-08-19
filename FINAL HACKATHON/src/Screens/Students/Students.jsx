@@ -14,9 +14,9 @@ const Students = () => {
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
-                const identifier = '12345'
+                
                 const apiUrl = 'https://backened-with-mongodb-final-hackathon.vercel.app'
-                console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${identifier}`);
+                console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${uniqueIdentifier}`);
                 const response = await axios.get(`${apiUrl}/assignments/students/${uniqueIdentifier}`);
 
                 console.log(response.data);
