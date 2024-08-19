@@ -1,4 +1,4 @@
-// src/Screens/Students/Students.jsx
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -14,7 +14,9 @@ const Students = () => {
     useEffect(() => {
         const fetchAssignments = async () => {
             try {
+                const identifier = '12345'
                 const apiUrl = 'https://backened-with-mongodb-final-hackathon.vercel.app'
+                console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${identifier}`);
                 const response = await axios.get(`${apiUrl}/assignments/students/${uniqueIdentifier}`);
 
                 console.log(response.data);

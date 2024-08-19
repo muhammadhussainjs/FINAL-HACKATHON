@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Card = ({title , description , date , item ,}) => {
+const Card = ({title , description , date , item }) => {
   
   const navigate = useNavigate()
 const gotoSubmit = ()=>{
