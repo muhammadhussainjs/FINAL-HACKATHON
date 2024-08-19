@@ -50,7 +50,7 @@ const Students = () => {
 
    return (
     <>
-    <Navbar1 />
+    <Navbar1 showadmin = {false} showstudents = {false} />
    
     {loading ? (
         <div>Loading assignments...</div>

@@ -42,7 +42,7 @@ try {
 
   return (
     <>
-    <Navbar1/>
+    <Navbar1 showadmin = {false} showstudents = {false}/>
     <div>
      
       {item ? (

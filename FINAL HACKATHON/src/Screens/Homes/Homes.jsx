@@ -1,6 +1,7 @@
 import React from 'react'
 import smit from '../../assets/smitimage.png';
 import { useNavigate } from 'react-router-dom';
+import Navbar1 from '../../Components/Navbar1/Navbar1';
 
 
 const Homes = () => {
@@ -16,6 +17,9 @@ const Homes = () => {
     }
 
   return (
+    <>
+    <Navbar1 showadmin = {false} showstudents = {false} />
+   
 <div className='flex justify-center mt-28'>
     <div className="card card-compact bg-base-100 w-96 shadow-xl items-center">
   <figure>
@@ -34,6 +38,7 @@ const Homes = () => {
   </div>
 </div>
     </div>
+      </>
   )
 }
 
