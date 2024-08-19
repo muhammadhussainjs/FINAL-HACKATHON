@@ -91,18 +91,22 @@ const Admin = () => {
 
 
       {data.map((item, index) => {
-        return <div className='card bg-base-300 w-full shadow-xl mt-5'>
+
+        return <div className='flex justify-center'> 
+
+        <div className='card bg-base-300 w-[90%]  shadow-xl mt-5'>
           
 
-        <div className="card-body items-center">
-        <h2 className=""><strong>NAME :</strong> {item.name}</h2>
-<h2><strong>SUBJECT :</strong> {item.subject}</h2>
-<h2><strong>BATCH :</strong> {item.batch}</h2>
+        <div className="card-body pl-6">
+        <h2 className="uppercase"><strong>NAME :</strong> {item.name}</h2>
+<h2 className="uppercase"><strong>SUBJECT :</strong> {item.subject}</h2>
+<h2 className="uppercase"><strong>BATCH :</strong> {item.batch}</h2>
 <h2><strong>SHARE THIS LINK FOR STUDENTS:</strong> <u className=' text-blue-500'>{item.classLink}</u></h2>
 
           </div>
         </div>
        
+        </div>
               
       })} 
       
@@ -120,7 +124,7 @@ const Admin = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6"  onSubmit={handleSubmit}>
             <div>
               <label htmlFor="title" className="block text-blue-500 text-sm font-medium leading-6">
                 TITLE
@@ -166,10 +170,10 @@ const Admin = () => {
 
       {assignment.map((item, index) => {
         return <div className='justify-center flex flex-col items-center'>
-          <div key={index} className="card bg-base-300 w-[50%] items-center shadow-xl mt-5 mb-10">
+          <div key={index} className="card bg-base-300 w-[90%] sm:w-[70%] md:w-[70%] items-center shadow-xl mt-5 mb-10">
         <div className="card-body">
-            <h2 className="card-title">TITLE : <p className='font-mono'>{item.title}</p></h2>
-            <h2 className='card-title'>DESCRIPTION : <p className='font-light text-2xl  italic'>{item.description}</p></h2>
+            <h2 className="card-title">TITLE  <p className='font-mono'>{item.title}</p></h2>
+            <h2 className='card-title'>DESCRIPTION  <p className='font-light text-2xl  italic'>{item.description}</p></h2>
             
           </div>
         </div>

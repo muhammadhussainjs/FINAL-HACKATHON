@@ -2,13 +2,12 @@ import React, { useRef} from 'react';
 import { useLocation } from 'react-router-dom';
 import image from '../../assets/smitimage.png'
 import axios from 'axios';
+import Navbar1 from '../../Components/Navbar1/Navbar1';
 
 const StudentSubmit = () => {
-  // Get the location object
   const urlRef = useRef('')
   const location = useLocation();
 
-  // Access the assignment data passed from the previous page
   const { item } = location.state || {};
   console.log(item);
   const handleSubmit = async (e)=>{
@@ -43,8 +42,9 @@ try {
 
   return (
     <>
+    <Navbar1/>
     <div>
-      <h2>Submit Assignment</h2>
+     
       {item ? (
         <div className="card bg-base-300 w-full shadow-xl mt-5">
         <div className="card-body">

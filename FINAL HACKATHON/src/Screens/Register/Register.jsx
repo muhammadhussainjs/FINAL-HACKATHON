@@ -53,6 +53,7 @@ alert('An error occurred during registration. Please try again.');
   
    return (
     <>
+    
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
 
@@ -134,7 +135,7 @@ alert('An error occurred during registration. Please try again.');
             <div>
               <div className="flex items-center gap-36">
                 <label htmlFor="batch" className="block  text-sm font-medium leading-6 text-blue-500">
-                  batch
+                  Batch
                 </label>
                
               </div>
