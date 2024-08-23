@@ -2,6 +2,7 @@ import express from 'express';
 import Assignment from '../models/Assignment.mjs';
 import Users from '../models/Users.mjs';
 import jwt from 'jsonwebtoken';
+import StudentUser from '../models/StudentUser.mjs';
 
 const router = express.Router();
 
@@ -75,6 +76,10 @@ router.get('/students/:uniqueIdentifier', async (req, res) => {
 
         const assignments = await Assignment.find({ teacherId: user._id });
         res.status(200).send({ message: 'Assignments fetched successfully', data: assignments });
+
+        const users = await StudentUser.find();
+        res.send({ message: 'Users Data fetched successfully' , user:users});
+
     } catch (error) {
         console.error('Error fetching assignments:', error);
         res.status(500).send({ message: 'Failed to fetch assignments, please try again.' });

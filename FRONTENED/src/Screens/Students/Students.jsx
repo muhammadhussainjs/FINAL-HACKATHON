@@ -10,29 +10,50 @@ const Students = () => {
     console.log('uniqueIdentifier ==> ' , uniqueIdentifier);
     
     const [assignments, setAssignments] = useState([]);
+    const [assignmentsed, setAssignmentsed] = useState([]);
      const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchAssignments = async () => {
-            try {
-                
-                const apiUrl = 'https://backened-with-mongodb-final-hackathon.vercel.app'
-                console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${uniqueIdentifier}`);
-                const response = await axios.get(`${apiUrl}/assignments/students/${uniqueIdentifier}`);
+     
+     useEffect(() => {
+         const fetchAssignments = async () => {
+             try {
+                 
+                 const apiUrl = 'https://backened-with-mongodb-final-hackathon.vercel.app'
+                 console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${uniqueIdentifier}`);
+                 const response = await axios.get(`${apiUrl}/assignments/students/${uniqueIdentifier}`);
+                 
+                 console.log('Full response:', response);
+                 console.log('Assignments data:', response.data.data);
+            console.table(response.data.data); // For a tabular view
+            console.log('Users data:', response.data.user);
+                 setAssignments(response.data.data);
+                 setAssignmentsed(response.data.user);
 
-                console.log(response.data);
                 
-                setAssignments(response.data.data);
-            } catch (error) {
-                console.error('Error fetching assignments:', error);
-                alert('Failed to load assignments.');
-            } finally {
-                setLoading(false);
-            }
-        };
 
-        fetchAssignments();
-    }, [uniqueIdentifier]);
+                } catch (error) {
+                    console.error('Error fetching assignments:', error);
+                    alert('Failed to load assignments.');
+                } finally {
+                    setLoading(false);
+                }    
+            };    
+            
+            fetchAssignments();
+        }, [uniqueIdentifier]);    
+        
+        
+// fetch studentusers    
+
+
+
+
+
+
+
+
+
+
 
     function gotoNext(item){
         console.log(item);
@@ -44,6 +65,11 @@ const Students = () => {
         
 
     },[assignments])
+    useEffect(()=>{
+        console.log(assignmentsed);
+        
+
+    },[assignmentsed])
     if (loading) {
         return <div>Loading assignments...</div>;
     }
@@ -66,6 +92,8 @@ const Students = () => {
         </div>
         </>
     )}
+
+   
     </>
 );
 
