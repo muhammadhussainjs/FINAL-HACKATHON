@@ -18,6 +18,7 @@ const Students = () => {
          const fetchAssignments = async () => {
              try {
                  
+                 console.log('api call');
                  const apiUrl = 'https://backened-with-mongodb-final-hackathon.vercel.app'
                  console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${uniqueIdentifier}`);
                  const response = await axios.get(`${apiUrl}/assignments/students/${uniqueIdentifier}`);
@@ -26,8 +27,10 @@ const Students = () => {
                  console.log('Assignments data:', response.data.data);
             console.table(response.data.data); // For a tabular view
             console.log('Users data:', response.data.user);
+            console.log('Response Data:', JSON.stringify(response.data, null, 2));
                  setAssignments(response.data.data);
                  setAssignmentsed(response.data.user);
+
 
                 
 
