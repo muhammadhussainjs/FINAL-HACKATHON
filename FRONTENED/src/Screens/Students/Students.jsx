@@ -11,15 +11,19 @@ const Students = () => {
     
     const [assignments, setAssignments] = useState([]);
     const [assignmentsed, setAssignmentsed] = useState([]);
-     const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [user , setUser] = useState(null)
+    const studenttoken = localStorage.getItem('studenttoken')
+    console.log(studenttoken);
+
 
      
      useEffect(() => {
          const fetchAssignments = async () => {
              try {
                  
-                 console.log('api call');
                  const apiUrl = 'https://backened-with-mongodb-final-hackathon.vercel.app'
+                 console.log('api call');
                  console.log('Fetching assignments from:', `${apiUrl}/assignments/students/${uniqueIdentifier}`);
                  const response = await axios.get(`${apiUrl}/assignments/students/${uniqueIdentifier}`);
                  
@@ -48,6 +52,29 @@ const Students = () => {
         
 // fetch studentusers    
 
+ useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get(`https://backened-with-mongodb-final-hackathon.vercel.app/studentusers/user`, { headers: { Authorization: `Bearer ${studenttoken}`}, } );
+
+               
+                 console.log('student user:  ==> ', response.data.data);
+                 setUser(response.data.data)
+
+          
+                
+                
+            } catch (error) {
+                console.error('Error fetching users:', error.message);
+               
+            } 
+        }
+        if (studenttoken) {
+            fetchUserData();
+        }
+
+        
+    }, [studenttoken]);
 
 
 
@@ -58,11 +85,7 @@ const Students = () => {
 
 
 
-    function gotoNext(item){
-        console.log(item);
-        console.log('item');
-    }
-
+   
     useEffect(()=>{
         console.log(assignments);
         
@@ -80,6 +103,18 @@ const Students = () => {
    return (
     <>
     <Navbar1 showadmin = {false} showstudents = {false} />
+
+    {user ? (    
+                     <div className="card bg-base-300 w-full shadow-xl mt-5">
+        <div className="card-body">
+            <h2 className="card-title uppercase">NAME : {user.name}</h2>
+            <h2 >EMAIL : {user.email}</h2>
+            
+          </div>
+        </div>):(
+            <p>no user found</p>
+        )
+      } 
    
     {loading ? (
         <div>Loading assignments...</div>

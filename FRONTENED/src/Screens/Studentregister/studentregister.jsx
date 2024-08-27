@@ -30,7 +30,7 @@ const Studentregister = () => {
     
     try{
   
-  const response = await axios.post('http://localhost:3001/studentusers/register' , Data)
+  const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/studentusers/register' , Data)
   console.log(response.data);
   if (response.status === 201) {
     alert('User Registered successfully')

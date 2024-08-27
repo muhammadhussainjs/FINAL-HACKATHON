@@ -28,10 +28,12 @@ const Student = () => {
       
       try{
     
-    const response = await axios.post('http://localhost:3001/studentusers/login' , Data)
+    const response = await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/studentusers/login' , Data)
     console.log(response.data);
     console.log(response.status);
     console.log(response.data.message);
+    const { token} = response.data
+      localStorage.setItem('studenttoken' , token)
     if (response.data.message === 'Invalid Password') {
       alert('Please Enter Correct Password')
      return

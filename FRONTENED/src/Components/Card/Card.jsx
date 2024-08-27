@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Card = ({title , description , date , item }) => {
+const Card = ({title , description , date , item  , user}) => {
   
   const navigate = useNavigate()
 const gotoSubmit = ()=>{
-  navigate('/studentsubmit' , {state:{item}})
+  navigate('/studentsubmit' , {state:{item , user}})
 
 }
   return (
