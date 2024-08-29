@@ -34,15 +34,16 @@ const Peoples = () => {
     {data.map((item , index)=>{
       return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5">
       <div className="card-body">
-          <h2 className="card-title">CreatedAt : {item.createdAt}</h2>
-          <h2 className="card-title">Title : {item.title}</h2>
+          <h2 className="card-title uppercase">NAME : {item.name}</h2>
+          <h2>EMAIL : {item.email}</h2>
+          <h2>Title : {item.title}</h2>
           <h2>Description : {item.description}</h2>
+          <h2>CreatedAt : {item.createdAt}</h2>
           <p className="text-blue-500"><a href={item.link}>Link : {item.link}</a></p>
           
         </div>
       </div>
-
-    })}
+})}
     
     </>
   )
