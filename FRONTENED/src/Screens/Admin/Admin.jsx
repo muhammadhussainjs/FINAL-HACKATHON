@@ -32,6 +32,7 @@ const Admin = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         
+        console.log(response.data.data);
         
         setAssignment(response.data.data);
       } catch (error) {
@@ -174,6 +175,7 @@ const Admin = () => {
         <div className="card-body pl-6">
             <h2 className=' text-xl break-words'><strong>TITLE</strong> {item.title}</h2>
             <h2 className=' break-words text-xl'><strong>DESCRIPTION</strong> {item.description}</h2>
+            <h2 className=' break-words text-xl'><strong>CREATEDAT</strong> {item.createdAt}</h2>
             
           </div>
         </div>
