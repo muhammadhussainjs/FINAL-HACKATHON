@@ -117,7 +117,7 @@ const Students = () => {
       } 
    
     {loading ? (
-        <div>Loading assignments...</div>
+        <div className='text-2xl flex justify-center items-center text-blue-500'>Loading assignments...</div>
     ) : (
         <>
         <div>
