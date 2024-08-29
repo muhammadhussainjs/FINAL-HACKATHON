@@ -97,7 +97,7 @@ const Students = () => {
 
     },[assignmentsed])
     if (loading) {
-        return <div className='text-2xl flex justify-center items-center text-blue-500'>Loading assignments...</div>;
+        return <div className=' mt-6 text-2xl flex justify-center items-center text-blue-500'>Loading assignments...</div>;
     }
 
    return (
@@ -105,8 +105,8 @@ const Students = () => {
     <Navbar1 showadmin = {false} showstudents = {false} />
 
     {user ? (    
-                     <div className="card bg-base-300 w-[90%] flex justify-center shadow-xl mt-5">
-        <div className="card-body">
+                     <div className="card bg-base-300 flex  justify-center shadow-xl mt-5">
+        <div className="card-body w-[90%]">
             <h2 className="card-title uppercase">NAME : {user.name}</h2>
             <h2 >EMAIL : {user.email}</h2>
             
