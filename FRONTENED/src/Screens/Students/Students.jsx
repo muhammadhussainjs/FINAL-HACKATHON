@@ -97,7 +97,7 @@ const Students = () => {
 
     },[assignmentsed])
     if (loading) {
-        return <div>Loading assignments...</div>;
+        return <div className='text-2xl flex justify-center items-center text-blue-500'>Loading assignments...</div>;
     }
 
    return (
