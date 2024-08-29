@@ -50,17 +50,29 @@ try {
   return (
     <>
     <Navbar1 showadmin = {false} showstudents = {false}/>
-    <div>
-     
+    <div className="card bg-base-300 w-full shadow-xl mt-5">
+      
+      {user ? (
+       
+        <div className="card-body pb-0">
+            <h2 className="card-title">NAME : {user.name}</h2>
+            <h2>EMAIL : {user.email}</h2>
+            
+            
+          </div>
+       
+      ) : (
+        <p>No user  available.</p>
+      )}
       {item ? (
-        <div className="card bg-base-300 sm:w-96 w-80  shadow-xl mt-5">
-        <div className="card-body">
-            <h2 className="card-title">Title : {item.title}</h2>
+        
+        <div className="card-body pt-1">
+            <h2>Title : {item.title}</h2>
             <h2>Description : {item.description}</h2>
             <h2>Posted Date : {item.createdAt}</h2>
             
           </div>
-        </div>
+       
       ) : (
         <p>No assignment data available.</p>
       )}

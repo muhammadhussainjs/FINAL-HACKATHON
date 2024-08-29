@@ -94,7 +94,7 @@ const Admin = () => {
 
         return <div className='flex justify-center'> 
 
-        <div className='card bg-base-300 w-[90%]  shadow-xl mt-5'>
+        <div className='card bg-base-300 w-[90%] shadow-xl mt-5'>
           
 
         <div className="card-body pl-6">
@@ -136,7 +136,7 @@ const Admin = () => {
                   ref={titleref}
                   type="text"
                   required
-                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 font-serif"
                 />
               </div>
             </div>
@@ -151,7 +151,7 @@ const Admin = () => {
                   name="description"
                   ref={descriptionref}
                   required
-                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full outline-none rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2"
                 />
               </div>
             </div>
@@ -169,11 +169,11 @@ const Admin = () => {
       </div>
 
       {assignment.map((item, index) => {
-        return <div className='justify-center flex flex-col items-center'>
-          <div key={index} className="card bg-base-300 w-[90%] sm:w-[70%] md:w-[70%] items-center shadow-xl mt-5 mb-10">
-        <div className="card-body">
-            <h2 className="card-title">TITLE  <p className='font-mono'>{item.title}</p></h2>
-            <h2 className='card-title'>DESCRIPTION  <p className='font-light text-2xl  italic'>{item.description}</p></h2>
+        return <div className='flex justify-center'>
+          <div key={index} className=" card bg-base-300 w-[80%] md:w-[50%] lg:w-[40%] sm:w-[60%] mb-5  shadow-xl mt-5">
+        <div className="card-body pl-6">
+            <h2 className=' text-xl break-words'><strong>TITLE</strong> {item.title}</h2>
+            <h2 className=' break-words text-xl'><strong>DESCRIPTION</strong> {item.description}</h2>
             
           </div>
         </div>
