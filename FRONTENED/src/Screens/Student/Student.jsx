@@ -72,6 +72,9 @@ const Student = () => {
         <h2 className="mt-1 text-[#0075b7] text-center text-1.5xl font-semibold  leading-9 tracking-tight ">
           Task Submission Portal
         </h2>
+        <h2 className="mt-1 text-center text-[#73c54d] text-3xl font-semi-bold leading-9 tracking-tight">
+            Sign in
+          </h2>
        
       </div>
 
