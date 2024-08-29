@@ -50,7 +50,7 @@ try {
   return (
     <>
     <Navbar1 showadmin = {false} showstudents = {false}/>
-    <div className="card bg-base-300 w-full shadow-xl mt-5">
+    <div className="card bg-base-300 w-[90%] justify-center shadow-xl mt-5">
       
       {user ? (
        
