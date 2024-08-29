@@ -76,7 +76,7 @@ alert('An error occurred during registration. Please try again.');
                 </label>
                 
               </div>
-              <div className="mt-2">
+              <div>
                 <input
                   id="name"
                   name="name"
@@ -97,7 +97,7 @@ alert('An error occurred during registration. Please try again.');
                 </label>
                 
               </div>
-              <div className="mt-2">
+              <div>
                 <input
                   id="email"
                   name="email"
@@ -118,7 +118,7 @@ alert('An error occurred during registration. Please try again.');
                 </label>
                 
               </div>
-              <div className="mt-2">
+              <div>
                 <input
                   id="subject"
                   name="subject"
@@ -139,7 +139,7 @@ alert('An error occurred during registration. Please try again.');
                 </label>
                
               </div>
-              <div className="mt-2">
+              <div>
                 <input
                   id="batch"
                   name="batch"
@@ -158,7 +158,7 @@ alert('An error occurred during registration. Please try again.');
                 </label>
                 
               </div>
-              <div className="mt-2">
+              <div>
                 <input
                   id="password"
                   name="password"

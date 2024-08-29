@@ -96,7 +96,7 @@ const Login = () => {
                   </a>
                 </div> */}
               </div>
-              <div className="mt-2">
+              <div>
                 <input
                   id="password"
                   name="password"

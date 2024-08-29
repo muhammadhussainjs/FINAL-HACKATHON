@@ -125,7 +125,7 @@ const Students = () => {
         </div>
         <div className='flex flex-col gap-6 items-center mt-12'>
             {assignments.map((item, index) => (
-                <Card key={index} title={item.title} description={item.description} date={item.createdAt} item={item}/>
+                <Card key={index} title={item.title} description={item.description} date={item.createdAt} item={item} user={user}/>
             ))}
         </div>
         </>
