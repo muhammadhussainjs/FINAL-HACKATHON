@@ -105,7 +105,7 @@ const Students = () => {
     <Navbar1 showadmin = {false} showstudents = {false} />
 
     {user ? (    
-                     <div className="card bg-base-300 w-full shadow-xl mt-5">
+                     <div className="card bg-base-300 w-[90%] shadow-xl mt-5">
         <div className="card-body">
             <h2 className="card-title uppercase">NAME : {user.name}</h2>
             <h2 >EMAIL : {user.email}</h2>
