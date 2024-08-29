@@ -33,7 +33,7 @@ const StudentSubmit = () => {
     console.log(Data);
     
 try {
-    const response =  await axios.post('http://localhost:3001/assignmentsubmit/assignmentsubmits' , Data)
+    const response =  await axios.post('https://backened-with-mongodb-final-hackathon.vercel.app/assignmentsubmit/assignmentsubmits' , Data)
  console.log(response);
  alert('assignment submitted successfully')
  urlRef.current.value = ''
