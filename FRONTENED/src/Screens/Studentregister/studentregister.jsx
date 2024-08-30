@@ -113,7 +113,7 @@ alert('An error occurred during registration. Please try again.');
              <div>
                <div className="flex items-center justify-between"> 
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-blue-500">
-                  Password
+                  PASSWORD
                 </label>
                 
               </div>

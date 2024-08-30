@@ -30,10 +30,10 @@ const Homes = () => {
   <div className="card-body flex flex-row">
     
     <div className="card-actions" onClick={gotoStudent}>
-      <button className="btn btn-primary">Join class</button>
+      <button className="btn btn-primary">JOIN CLASS</button>
     </div>
     <div className="card-actions" onClick={gotoRegister}>
-      <button className="btn btn-primary">Create class</button>
+      <button className="btn btn-primary">CREATE CLASS</button>
     </div>
   </div>
 </div>
