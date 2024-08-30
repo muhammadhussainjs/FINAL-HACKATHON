@@ -98,7 +98,7 @@ const Admin = () => {
         <div className='card bg-base-300 w-[90%] shadow-xl mt-5'>
           
 
-        <div className="card-body pl-6">
+        <div className="card-body pl-6 break-words">
         <h2 className="uppercase"><strong>NAME :</strong> {item.name}</h2>
 <h2 className="uppercase"><strong>SUBJECT :</strong> {item.subject}</h2>
 <h2 className="uppercase"><strong>BATCH :</strong> {item.batch}</h2>

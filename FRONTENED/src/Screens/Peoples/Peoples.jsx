@@ -32,7 +32,7 @@ const Peoples = () => {
     <>
     <Navbar1 showstudents = {false} />
     {data.map((item , index)=>{
-      return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5">
+      return <div key={index} className="card bg-base-300 w-full shadow-xl mt-5 break-words">
       <div className="card-body">
           <h2 className="card-title uppercase">NAME : {item.name}</h2>
           <h2>EMAIL : {item.email}</h2>
